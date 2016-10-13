@@ -74,6 +74,25 @@ angular.module('credHub', ['ngMaterial', 'ngMessages', 'ngRoute'])
                 ctrl.user.loggedIn = true;
             };
             ctrl.selectedPackage = '';
+            ctrl.livesIn = "";
+            ctrl.worksIn = "";
+            ctrl.willSign = "";
+            ctrl.primary = true;
+            ctrl.owner= true;
+            ctrl.delivery = "";
+            ctrl.product = "";
+
+            ctrl.clear = function(){
+                ctrl.selectedPackage = '';
+                ctrl.livesIn = "";
+                ctrl.worksIn = "";
+                ctrl.willSign = "";
+                ctrl.primary = true;
+                ctrl.owner= true;
+                ctrl.delivery = "";
+                ctrl.product = "";
+            };
+
             ctrl.packages = [
                 {val:"AARP Form", id:1},
                 {val:"Advanced Market Network", id:1},
@@ -85,7 +104,6 @@ angular.module('credHub', ['ngMaterial', 'ngMessages', 'ngRoute'])
                 {val:"Worksite", id:1}
             ];
 
-            ctrl.product = "";
             ctrl.products = [
                 {val:"New York Life Flexible Premium Fixed Annuity", type:"fixed"},
                 {val:"New York Life Clear Income MVA Fixed Annuity", type:"fixed"},

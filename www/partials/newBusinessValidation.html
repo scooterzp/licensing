@@ -30,6 +30,58 @@
             </md-select>
         </md-input-container>
     </md-input-group>
+    <md-input-group>
+        <label>Applicant</label>
+        <md-input-container>
+            <label>Lives In</label>
+            <md-select ng-model="$ctrl.livesIn">
+                <md-option value="CT"><em>CT</em></md-option>
+                <md-option value="NJ"><em>NJ</em></md-option>
+                <md-option value="NY"><em>NY</em></md-option>
+            </md-select>
+        </md-input-container>
+        <md-input-container>
+            <label>Works In</label>
+            <md-select ng-model="$ctrl.worksIn">
+                <md-option value="CT"><em>CT</em></md-option>
+                <md-option value="NJ"><em>NJ</em></md-option>
+                <md-option value="NY"><em>NY</em></md-option>
+            </md-select>
+        </md-input-container>
+        <md-input-container>
+            <label>Will Sign</label>
+            <md-select ng-model="$ctrl.willSign">
+                <md-option value="CT"><em>CT</em></md-option>
+                <md-option value="NJ"><em>NJ</em></md-option>
+                <md-option value="NY"><em>NY</em></md-option>
+            </md-select>
+        </md-input-container>
+    </md-input-group>
+
+    <md-input-group>
+        <md-checkbox ng-model="$ctrl.primary" aria-label="Primary Insured">
+            Primary Insured
+        </md-checkbox>
+        <md-checkbox ng-model="$ctrl.owner" aria-label="Owner">
+            Owner
+        </md-checkbox>
+    </md-input-group>
+
+    <md-input-container>
+        <label>Policy Will Be Delivered To</label>
+        <md-select ng-model="$ctrl.delivery">
+            <md-option value="CT"><em>CT</em></md-option>
+            <md-option value="NJ"><em>NJ</em></md-option>
+            <md-option value="NY"><em>NY</em></md-option>
+        </md-select>
+    </md-input-container>
+
+    <md-input-group layout="row" >
+        <md-button>Check</md-button>
+        <md-button ng-click="$ctrl.user.activePage = 'home'; $ctrl.clear();">Cancel</md-button>
+    </md-input-group>
+
+
 
 
 </md-card>
