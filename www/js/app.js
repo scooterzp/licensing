@@ -1,6 +1,5 @@
-
-angular
-    .module('licensing', ['ngMaterial', 'ngMessages'])
+var app = angular.app('licensing');
+app.module('licensing', ['ngMaterial', 'ngMessages'])
     .controller('appCtrl', function($scope) {
         $scope.user = {
             title: 'Developer',
@@ -16,6 +15,6 @@ angular
             userId:'',
             password:''
         };
-    };
+    });
 
 
