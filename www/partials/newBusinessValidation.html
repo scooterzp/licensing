@@ -1,0 +1,35 @@
+<md-card flex>
+    <md-input-group>
+        <md-input-container>
+            <label>Package</label>
+            <md-select ng-model="$ctrl.selectedPackage">
+                <md-option><em>None</em></md-option>
+                <md-option ng-value="package.val" ng-repeat="package in $ctrl.packages">
+                    {{package.val}}
+                </md-option>
+            </md-select>
+        </md-input-container>
+        <md-input-container>
+            <label>Product</label>
+            <md-select ng-model="$ctrl.selectedProduct">
+                <md-optgroup label="Variable Annuity">
+                    <md-option ng-value="product.val" ng-repeat="product in $ctrl.products | filter: {type: 'variable'}">
+                        {{product.val}}
+                    </md-option>
+                </md-optgroup>
+                <md-optgroup label="Income Annuity">
+                    <md-option ng-value="product" ng-repeat="product in $ctrl.products | filter: {type: 'income'}">
+                        {{product.val}}
+                    </md-option>
+                </md-optgroup>
+                <md-optgroup label="Fixed Annuity">
+                    <md-option ng-value="product.val" ng-repeat="product in $ctrl.products | filter: {type: 'fixed'}">
+                        {{product.val}}
+                    </md-option>
+                </md-optgroup>
+            </md-select>
+        </md-input-container>
+    </md-input-group>
+
+
+</md-card>

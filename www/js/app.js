@@ -67,12 +67,39 @@ angular.module('credHub', ['ngMaterial', 'ngMessages', 'ngRoute'])
             var ctrl = this;
         }
     }).component('nbValidation', {
-        templateUrl: "partials/newBusinessValidation",
+        templateUrl: "partials/newBusinessValidation.html",
         controller: function () {
             var ctrl = this;
             ctrl.login = function () {
                 ctrl.user.loggedIn = true;
-            }
+            };
+            ctrl.selectedPackage = '';
+            ctrl.packages = [
+                {val:"AARP Form", id:1},
+                {val:"Advanced Market Network", id:1},
+                {val:"Annuity", id:1},
+                {val:"Life", id:1},
+                {val:"Long Term Care", id:1},
+                {val:"MainStay", id:1},
+                {val:"NYLSEC", id:1},
+                {val:"Worksite", id:1}
+            ];
+
+            ctrl.product = "";
+            ctrl.products = [
+                {val:"New York Life Flexible Premium Fixed Annuity", type:"fixed"},
+                {val:"New York Life Clear Income MVA Fixed Annuity", type:"fixed"},
+                {val:"New York Life Secure Term Choice Fixed Annuity", type:"fixed"},
+                {val:"New York Life Guaranteed Future Income Annuity", type:"income"},
+                {val:"New York Life Lifetime Mutual Income Annuity", type:"income"},
+                {val:"New York Life Premium Variable Annuity II", type:"variable"},
+                {val:"New York Life Complete Access Variable Annuity II", type:"variable"}
+            ];
+
+            /*
+            ctrl.packages =
+                ('AARP Form,Advanced Market Network,Annuity,Life,Long Term Care,MainStay,NYLSEC,Worksite')
+                .split(',').map(function (package) { return { val: package }; });*/
         },
         bindings: {
             user: '=',

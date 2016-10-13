@@ -8,7 +8,10 @@
         </h2>
         <span flex></span>
         <md-button class="md-icon-button" aria-label="Calendar" ng-show='$ctrl.user.loggedIn'>
-            <i class="mdi mdi-calendar mdi-24px mdi-light"></i>
+        <i class="mdi mdi-calendar mdi-24px mdi-light"></i>
+    </md-button>
+        <md-button class="md-icon-button" aria-label="Home" ng-show='$ctrl.user.loggedIn' ng-click="$ctrl.user.activePage = 'home'">
+            <i class="mdi mdi-home mdi-24px mdi-light"></i>
         </md-button>
     </div>
 </md-toolbar>
@@ -21,4 +24,36 @@
             </md-button>
         </div>
     </md-toolbar>
+
+    <md-list layout="column" layout-align="start center">
+        <md-list-item class="listItem" ng-click="$ctrl.user.activePage = 'nbVal'; $ctrl.toggleLeft();">
+            <span>New Business Validation</span>
+        </md-list-item>
+        <md-menu-divider></md-menu-divider>
+        <md-list-item class="listItem" ng-click="$ctrl.user.activePage = 'genInfo'; $ctrl.toggleLeft();">
+            <span>General Info</span>
+        </md-list-item>
+        <md-menu-divider></md-menu-divider>
+        <md-list-item class="listItem" ng-click="$ctrl.user.activePage = 'license'; $ctrl.toggleLeft();">
+            <span>Licensing</span>
+        </md-list-item>
+        <md-menu-divider></md-menu-divider>
+        <md-list-item class="listItem" ng-click="$ctrl.user.activePage = 'FINRA'; $ctrl.toggleLeft();">
+            <span>FINRA</span>
+        </md-list-item>
+        <md-menu-divider></md-menu-divider>
+        <md-list-item class="listItem" ng-click="$ctrl.user.activePage = 'train'; $ctrl.toggleLeft();">
+            <span>Training Courses</span>
+        </md-list-item>
+        <md-menu-divider></md-menu-divider>
+        <md-list-item class="listItem" ng-click="$ctrl.user.activePage = 'EAG'; $ctrl.toggleLeft();">
+            <span>Eagle</span>
+        </md-list-item>
+        <md-menu-divider></md-menu-divider>
+        <md-list-item class="listItem" ng-click="$ctrl.user.activePage = 'LTC'; $ctrl.toggleLeft();">
+            <span>Long Term Care</span>
+        </md-list-item>
+        <md-menu-divider></md-menu-divider>
+        <md-divider></md-divider>
+    </md-list>
 </md-sidenav>

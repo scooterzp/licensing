@@ -3,5 +3,6 @@
         <app-header layout="row" user="$ctrl.user"></app-header>
         <login layout="row" user="$ctrl.user" ng-show='!$ctrl.user.loggedIn && $ctrl.user.activePage == "login"'></login>
         <home layout="row" user="$ctrl.user" ng-show='$ctrl.user.loggedIn && $ctrl.user.activePage == "home"'></home>
+        <nb-validation layout="row" user="$ctrl.user"  ng-show='$ctrl.user.loggedIn && ($ctrl.user.activePage == "nbVal" || $ctrl.user.activePage == "home")'></nb-validation>
     </md-content>
 </div>
