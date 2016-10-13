@@ -1,0 +1,24 @@
+<md-toolbar class="md-hue-2">
+    <div class="md-toolbar-tools" layout-align="top center">
+        <md-button class="md-icon-button" aria-label="Settings" ng-show='$ctrl.user.loggedIn'  ng-click="$ctrl.toggleLeft()">
+            <i class="mdi mdi-menu mdi-24px mdi-light"></i>
+        </md-button>
+        <h2>
+            <span>Credential Hub</span>
+        </h2>
+        <span flex></span>
+        <md-button class="md-icon-button" aria-label="Calendar" ng-show='$ctrl.user.loggedIn'>
+            <i class="mdi mdi-calendar mdi-24px mdi-light"></i>
+        </md-button>
+    </div>
+</md-toolbar>
+<md-sidenav class="md-sidenav-left" md-component-id="left" md-whiteframe="4">
+    <md-toolbar class="md-theme-indigo">
+        <div class="md-toolbar-tools" layout-align="top center">
+            <span flex></span>
+            <md-button ng-click="$ctrl.toggleLeft()" class="md-accent">
+                <i class="mdi mdi-close mdi-24px mdi-light"></i>
+            </md-button>
+        </div>
+    </md-toolbar>
+</md-sidenav>

@@ -1,0 +1,7 @@
+<div flex layout="row">
+    <md-content style="height:100vh" flex>
+        <app-header layout="row" user="$ctrl.user"></app-header>
+        <login layout="row" user="$ctrl.user" ng-show='!$ctrl.user.loggedIn && $ctrl.user.activePage == "login"'></login>
+        <home layout="row" user="$ctrl.user" ng-show='$ctrl.user.loggedIn && $ctrl.user.activePage == "home"'></home>
+    </md-content>
+</div>

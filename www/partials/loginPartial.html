@@ -1,0 +1,19 @@
+<div layout="column" class="md-whiteframe-5dp flex-100">
+    <md-content>
+        <div layout="row">
+            <md-input-container flex>
+                <label>User Id</label>
+                <input ng-model="$ctrl.user.id">
+            </md-input-container>
+
+            <md-input-container flex>
+                <label>Password</label>
+                <input ng-model="$ctrl.user.pass" type="password">
+            </md-input-container>
+        </div>
+        <div layout="row">
+            <span flex></span>
+            <md-button layout-align="center end" ng-click="$ctrl.login()">Login</md-button>
+            <div>
+    </md-content>
+</div>

@@ -13,28 +13,14 @@
     <link rel="stylesheet" type="text/css" href="css/angular-material.layout-attributes.min.css"/>
     <link rel="stylesheet" type="text/css" href="css/angular-material.layouts.min.css"/>
     <link rel="stylesheet" type="text/css" href="css/angular-material.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/materialdesignicons.min.css"/>
     <title>Credential Hub</title>
 </head>
 
 <body ng-app="credHub">
 
+<div ng-view></div>
 
-<div ng-controller="appCtrl" layout="column" class="md-whiteframe-1dp">
-    <md-content>
-        <div>
-            <md-input-container>
-                <label>User Id</label>
-                <input ng-model="user.id">
-            </md-input-container>
-
-            <md-input-container>
-                <label>Password</label>
-                <input ng-model="user.pass" type="password">
-            </md-input-container>
-        </div>
-    </md-content>
-
-</div>
 <script type="text/javascript" src="cordova.js"></script>
 <script type="text/javascript" src="js/index.js"></script>
 <script type="text/javascript" src="js/angular.min.js"></script>
@@ -42,6 +28,7 @@
 <script type="text/javascript" src="js/angular-aria.min.js"></script>
 <script type="text/javascript" src="js/angular-material.min.js"></script>
 <script type="text/javascript" src="js/angular-messages.min.js"></script>
+<script type="text/javascript" src="js/angular-route.min.js"></script>
 <script type="text/javascript" src="js/app.js?13211"></script>
 <script type="text/javascript">
     app.initialize();
