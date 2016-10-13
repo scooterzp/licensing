@@ -1,5 +1,5 @@
-var app = angular.app('licensing');
-app.module('licensing', ['ngMaterial', 'ngMessages'])
+
+angular.module('credHub', ['ngMaterial', 'ngMessages'])
     .controller('appCtrl', function($scope) {
         $scope.user = {
             title: 'Developer',
