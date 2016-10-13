@@ -9,7 +9,7 @@
                 </md-option>
             </md-select>
         </md-input-container>
-        <md-input-container>
+        <md-input-container ng-show="$ctrl.selectedPackage != ''">
             <label>Product</label>
             <md-select ng-model="$ctrl.selectedProduct">
                 <md-optgroup label="Variable Annuity">
@@ -77,11 +77,8 @@
     </md-input-container>
 
     <md-input-group layout="row" >
-        <md-button>Check</md-button>
+        <span flex></span>
+        <md-button ng-click="$ctrl.user.activePage = 'train'; $ctrl.clear();">Check</md-button>
         <md-button ng-click="$ctrl.user.activePage = 'home'; $ctrl.clear();">Cancel</md-button>
     </md-input-group>
-
-
-
-
 </md-card>

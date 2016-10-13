@@ -66,6 +66,14 @@ angular.module('credHub', ['ngMaterial', 'ngMessages', 'ngRoute'])
         controller: function() {
             var ctrl = this;
         }
+    }).component('training', {
+        templateUrl: "partials/training.html",
+        bindings: {
+            user: '='
+        },
+        controller: function() {
+            var ctrl = this;
+        }
     }).component('nbValidation', {
         templateUrl: "partials/newBusinessValidation.html",
         controller: function () {
