@@ -1,6 +1,6 @@
 <md-card flex>
     <md-input-group>
-        <md-input-container>
+        <md-input-container layout="row" layout-align="start center">
             <label>Package</label>
             <md-select ng-model="$ctrl.selectedPackage">
                 <md-option><em>None</em></md-option>
@@ -9,9 +9,9 @@
                 </md-option>
             </md-select>
         </md-input-container>
-        <md-input-container ng-show="$ctrl.selectedPackage != ''">
+        <md-input-container layout="row" ng-show="$ctrl.selectedPackage != ''">
             <label>Product</label>
-            <md-select ng-model="$ctrl.selectedProduct">
+            <md-select ng-model="$ctrl.product">
                 <md-optgroup label="Variable Annuity">
                     <md-option ng-value="product.val" ng-repeat="product in $ctrl.products | filter: {type: 'variable'}">
                         {{product.val}}
@@ -30,8 +30,10 @@
             </md-select>
         </md-input-container>
     </md-input-group>
-    <md-input-group>
-        <label>Applicant</label>
+
+    <md-divider></md-divider>
+    <label ng-show="$ctrl.product != ''" >Applicant</label>
+    <md-input-group ng-show="$ctrl.product != ''"  layout="row" layout-align="start center">
         <md-input-container>
             <label>Lives In</label>
             <md-select ng-model="$ctrl.livesIn">
@@ -58,16 +60,15 @@
         </md-input-container>
     </md-input-group>
 
-    <md-input-group>
+    <div ng-show="$ctrl.product != ''" layout="row" layout-align="start center">
         <md-checkbox ng-model="$ctrl.primary" aria-label="Primary Insured">
             Primary Insured
         </md-checkbox>
         <md-checkbox ng-model="$ctrl.owner" aria-label="Owner">
             Owner
         </md-checkbox>
-    </md-input-group>
-
-    <md-input-container>
+    </div>
+    <md-input-container ng-show="$ctrl.product != ''" layout="row" layout-align="start center">
         <label>Policy Will Be Delivered To</label>
         <md-select ng-model="$ctrl.delivery">
             <md-option value="CT"><em>CT</em></md-option>
@@ -75,9 +76,8 @@
             <md-option value="NY"><em>NY</em></md-option>
         </md-select>
     </md-input-container>
-
-    <md-input-group layout="row" >
-        <span flex></span>
+    <md-divider></md-divider>
+    <md-input-group layout="row" ng-show="$ctrl.delivery != ''" layout-align="start center">
         <md-button ng-click="$ctrl.user.activePage = 'train'; $ctrl.clear();">Check</md-button>
         <md-button ng-click="$ctrl.user.activePage = 'home'; $ctrl.clear();">Cancel</md-button>
     </md-input-group>

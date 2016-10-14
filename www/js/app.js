@@ -74,19 +74,48 @@ angular.module('credHub', ['ngMaterial', 'ngMessages', 'ngRoute', 'ngCordova'])
         controller: function() {
             var ctrl = this;
         }
-    }).component('training', {
-        templateUrl: "partials/training.html",
+    }).component('payment', {
+        templateUrl: "partials/payment.html",
         bindings: {
             user: '='
+        },
+        controller: function() {
+            var ctrl = this;
+        }
+    }).component('genInfo', {
+        templateUrl: "partials/user.html",
+        bindings: {
+            user: '='
+        },
+        controller: function() {
+            var ctrl = this;
+        }
+    })
+    .component('training', {
+        templateUrl: "partials/training.html",
+        bindings: {
+            user: '=',
+            trainingType: '<'
         },
         controller:['$mdPanel', '$cordovaCalendar', function($mdPanel, $cordovaCalendar) {
 
             var ctrl = this;
 
             ctrl.createEvent = function(){
-                console.log("HERE");
                 $cordovaCalendar.createEventInteractively();
             };
+
+            ctrl.paymentType = "first";
+
+            ctrl.payForTraining = function(type){
+                console.log("HERE");
+                if(type == "appt"){
+                    ctrl.user.activePage = "apptPay";
+                }else{
+                    ctrl.user.activePage = "finraPay";
+                }
+            }
+
             ctrl.showDialog = function(){
                 var position = $mdPanel.newPanelPosition()
                     .absolute()
@@ -171,11 +200,6 @@ angular.module('credHub', ['ngMaterial', 'ngMessages', 'ngRoute', 'ngCordova'])
                 {val:"New York Life Premium Variable Annuity II", type:"variable"},
                 {val:"New York Life Complete Access Variable Annuity II", type:"variable"}
             ];
-
-            /*
-            ctrl.packages =
-                ('AARP Form,Advanced Market Network,Annuity,Life,Long Term Care,MainStay,NYLSEC,Worksite')
-                .split(',').map(function (package) { return { val: package }; });*/
         },
         bindings: {
             user: '=',
@@ -211,7 +235,6 @@ PanelDialogCtrl.prototype.closeDialog = function() {
 
 PanelDialogCtrl.prototype.createEvent = function() {
     var cordovaCalendar = this._cordovaCalendar;
-        console.log("HERE");
         var options = {
            title:"NYL18013 - Variable Annuity Product Training"
         };

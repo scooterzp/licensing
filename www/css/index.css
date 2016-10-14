@@ -117,6 +117,7 @@ h1 {
 .listItem {
   font-size:large;
     color:blue;
+    width:100%
 }
 
 .demo-dialog-example {
