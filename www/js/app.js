@@ -81,6 +81,35 @@ angular.module('credHub', ['ngMaterial', 'ngMessages', 'ngRoute', 'ngCordova'])
         },
         controller: function() {
             var ctrl = this;
+            ctrl.myDate = "";
+            ctrl.submitPayment = function(){
+                ctrl.user.activePage = 'train';
+                var now             = new Date().getTime(),
+                    _10_sec_from_now = new Date(now + 10*1000);
+
+                cordova.plugins.notification.local.schedule({
+                    text: "Payment Successfully Complete",
+                    at: _10_sec_from_now,
+                    led: "FF0000",
+                    sound: null
+                });
+            };
+        }
+    }).component('finra', {
+        templateUrl: "partials/finra.html",
+        bindings: {
+            user: '='
+        },
+        controller: function() {
+            var ctrl = this;
+        }
+    }).component('trainingDone', {
+        templateUrl: "partials/training2.html",
+        bindings: {
+            user: '='
+        },
+        controller: function() {
+            var ctrl = this;
         }
     }).component('genInfo', {
         templateUrl: "partials/user.html",
@@ -106,9 +135,9 @@ angular.module('credHub', ['ngMaterial', 'ngMessages', 'ngRoute', 'ngCordova'])
             };
 
             ctrl.paymentType = "first";
+            ctrl.ccNum = "";
 
             ctrl.payForTraining = function(type){
-                console.log("HERE");
                 if(type == "appt"){
                     ctrl.user.activePage = "apptPay";
                 }else{

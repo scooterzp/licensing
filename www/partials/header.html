@@ -7,9 +7,6 @@
             <span>Credential Hub</span>
         </h2>
         <span flex></span>
-        <md-button class="md-icon-button" aria-label="Calendar" ng-click="window.plugins.calendar.openCalendar();" ng-show='$ctrl.user.loggedIn'>
-        <i class="mdi mdi-calendar mdi-24px mdi-light"></i>
-    </md-button>
         <md-button class="md-icon-button" aria-label="Home" ng-show='$ctrl.user.loggedIn' ng-click="$ctrl.user.activePage = 'home'">
             <i class="mdi mdi-home mdi-24px mdi-light"></i>
         </md-button>
@@ -42,7 +39,7 @@
             <span>FINRA</span>
             <md-divider></md-divider>
         </md-list-item>
-        <md-list-item class="listItem" ng-click="$ctrl.user.activePage = 'train'; $ctrl.toggleLeft();">
+        <md-list-item class="listItem" ng-click="$ctrl.user.activePage = 'trainCompleted'; $ctrl.toggleLeft();">
             <span>Training Courses</span>
             <md-divider></md-divider>
         </md-list-item>
