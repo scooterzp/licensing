@@ -10,7 +10,7 @@
     <content src="index.html" />
     <preference name="DisallowOverscroll" value="true" />
     <preference name="android-minSdkVersion" value="14" />
-    <plugin name="de.appplant.cordova.plugin.local-notification" spec="0.8.1" source="pgb" />
+    <plugin name="de.appplant.cordova.plugin.local-notification" />
     <plugin name="cordova-plugin-calendar" />
 
     <icon src="icon.png" />
