@@ -212,7 +212,10 @@ PanelDialogCtrl.prototype.closeDialog = function() {
 PanelDialogCtrl.prototype.createEvent = function() {
     var cordovaCalendar = this._cordovaCalendar;
         console.log("HERE");
-        cordovaCalendar.createEventInteractively();
+        var options = {
+           title:"NYL18013 - Variable Annuity Product Training"
+        };
+        cordovaCalendar.createEventWithOptions(options);
         cordovaCalendar.destroy();
 };
 
