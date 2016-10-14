@@ -1,16 +1,21 @@
 <md-card flex>
     <h1>What is Missing?</h1>
 
-    <div>
-        <h2>Training</h2>
-
-    </div>
-    <div>
-        <h2>Appointments</h2>
-
-    </div>
-    <div>
-        <h2>FINRA Jurisdiction</h2>
-
-    </div>
+    <md-list>
+        <md-subheader class="md-no-sticky">Training</md-subheader>
+        <md-list-item>
+            <p> NYL18013 - Variable Annuity Product Training</p>
+            <md-button class="md-secondary" ng-click="$ctrl.showDialog()">Apply</md-button>
+        </md-list-item>
+        <md-subheader class="md-no-sticky">Appointments</md-subheader>
+        <md-list-item>
+            <p>NYLIAC Life</p>
+            <md-button class="md-secondary">Apply</md-button>
+        </md-list-item>
+        <md-subheader class="md-no-sticky">FINRA Jurisdiction</md-subheader>
+        <md-list-item>
+            <p>NJ</p>
+            <md-button class="md-secondary">Apply</md-button>
+        </md-list-item>
+    </md-list>
 </md-card>

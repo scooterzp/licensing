@@ -5,5 +5,7 @@
         <home layout="row" user="$ctrl.user" ng-show='$ctrl.user.loggedIn && $ctrl.user.activePage == "home"'></home>
         <nb-validation layout="row" user="$ctrl.user"  ng-show='$ctrl.user.loggedIn && $ctrl.user.activePage == "nbVal"'></nb-validation>
         <training layout="row" user="$ctrl.user"  ng-show='$ctrl.user.loggedIn && $ctrl.user.activePage == "train"'></training>
+        <!--<training-panel layout="row" user="$ctrl.user"  ng-show='$ctrl.user.loggedIn && $ctrl.user.activePage == "trainPanel"'></training-panel>-->
+        <suggestions layout="row" user="$ctrl.user"  ng-show='$ctrl.user.loggedIn && ($ctrl.user.activePage == "train"||$ctrl.user.activePage == "home")'></suggestions>
     </md-content>
 </div>

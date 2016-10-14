@@ -66,13 +66,53 @@ angular.module('credHub', ['ngMaterial', 'ngMessages', 'ngRoute'])
         controller: function() {
             var ctrl = this;
         }
-    }).component('training', {
-        templateUrl: "partials/training.html",
+    }).component('suggestions', {
+        templateUrl: "partials/suggestions.html",
         bindings: {
             user: '='
         },
         controller: function() {
             var ctrl = this;
+        }
+    }).component('training', {
+        templateUrl: "partials/training.html",
+        bindings: {
+            user: '='
+        },
+        controller:['$mdPanel', function($mdPanel) {
+            var ctrl = this;
+            ctrl.showDialog = function(){
+                console.log("INSIDE");
+                var position = $mdPanel.newPanelPosition()
+                    .absolute()
+                    .center();
+
+                var config = {
+                    attachTo: angular.element(document.body),
+                    controller: PanelDialogCtrl,
+                    controllerAs: 'ctrl',
+                    disableParentScroll: false,
+                    templateUrl: 'partials/trainingPanel.html',
+                    hasBackdrop: true,
+                    panelClass: 'demo-dialog-example',
+                    position: position,
+                    trapFocus: true,
+                    zIndex: 150,
+                    clickOutsideToClose: true,
+                    escapeToClose: true,
+                    focusOnOpen: true
+                };
+                $mdPanel.open(config);
+            }
+        }]
+    }).component('trainingPanel', {
+        templateUrl: "partials/trainingPanel.html",
+        bindings: {
+            user: '='
+        },
+        controller: function() {
+            var ctrl = this;
+
         }
     }).component('nbValidation', {
         templateUrl: "partials/newBusinessValidation.html",
@@ -142,5 +182,19 @@ angular.module('credHub', ['ngMaterial', 'ngMessages', 'ngRoute'])
                 })
         }
     ]);
+
+
+function PanelDialogCtrl(mdPanelRef) {
+    this._mdPanelRef = mdPanelRef;
+}
+
+PanelDialogCtrl.prototype.closeDialog = function() {
+    var panelRef = this._mdPanelRef;
+
+    panelRef && panelRef.close().then(function() {
+        angular.element(document.querySelector('.demo-dialog-open-button')).focus();
+        panelRef.destroy();
+    });
+};
 
 
