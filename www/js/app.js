@@ -104,16 +104,24 @@ angular.module('credHub', ['ngMaterial', 'ngMessages', 'ngRoute'])
                 };
                 $mdPanel.open(config);
             }
+
+            ctrl.createEvent = function(){
+
+            }
         }]
     }).component('trainingPanel', {
         templateUrl: "partials/trainingPanel.html",
         bindings: {
             user: '='
         },
-        controller: function() {
+        controller: ['$cordovaCalendar', function($cordovaCalendar) {
             var ctrl = this;
 
-        }
+            ctrl.createEvent = function(){
+                $cordovaCalendar.createEventInteractively();
+            }
+
+        }]
     }).component('nbValidation', {
         templateUrl: "partials/newBusinessValidation.html",
         controller: function () {
