@@ -1,4 +1,4 @@
-angular.module('credHub', ['ngMaterial', 'ngMessages', 'ngRoute'])
+angular.module('credHub', ['ngMaterial', 'ngMessages', 'ngRoute', 'ngCordova'])
     .component('app', {
         templateUrl: "partials/app.html",
         controller: function () {
@@ -79,10 +79,15 @@ angular.module('credHub', ['ngMaterial', 'ngMessages', 'ngRoute'])
         bindings: {
             user: '='
         },
-        controller:['$mdPanel', function($mdPanel) {
+        controller:['$mdPanel', '$cordovaCalendar', function($mdPanel, $cordovaCalendar) {
+
             var ctrl = this;
+
+            ctrl.createEvent = function(){
+                console.log("HERE");
+                $cordovaCalendar.createEventInteractively();
+            };
             ctrl.showDialog = function(){
-                console.log("INSIDE");
                 var position = $mdPanel.newPanelPosition()
                     .absolute()
                     .center();
@@ -103,7 +108,7 @@ angular.module('credHub', ['ngMaterial', 'ngMessages', 'ngRoute'])
                     focusOnOpen: true
                 };
                 $mdPanel.open(config);
-            }
+            };
 
             ctrl.createEvent = function(){
 
@@ -114,14 +119,11 @@ angular.module('credHub', ['ngMaterial', 'ngMessages', 'ngRoute'])
         bindings: {
             user: '='
         },
-        controller: ['$cordovaCalendar', function($cordovaCalendar) {
+        controller:  function() {
             var ctrl = this;
 
-            ctrl.createEvent = function(){
-                $cordovaCalendar.createEventInteractively();
-            }
 
-        }]
+        }
     }).component('nbValidation', {
         templateUrl: "partials/newBusinessValidation.html",
         controller: function () {
@@ -192,8 +194,9 @@ angular.module('credHub', ['ngMaterial', 'ngMessages', 'ngRoute'])
     ]);
 
 
-function PanelDialogCtrl(mdPanelRef) {
+function PanelDialogCtrl(mdPanelRef, $cordovaCalendar) {
     this._mdPanelRef = mdPanelRef;
+    this._cordovaCalendar = $cordovaCalendar;
 }
 
 PanelDialogCtrl.prototype.closeDialog = function() {
@@ -203,6 +206,14 @@ PanelDialogCtrl.prototype.closeDialog = function() {
         angular.element(document.querySelector('.demo-dialog-open-button')).focus();
         panelRef.destroy();
     });
+};
+
+
+PanelDialogCtrl.prototype.createEvent = function() {
+    var cordovaCalendar = this._cordovaCalendar;
+        console.log("HERE");
+        cordovaCalendar.createEventInteractively();
+        cordovaCalendar.destroy();
 };
 
 
