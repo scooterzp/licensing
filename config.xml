@@ -2,10 +2,10 @@
 <widget id="com.phonegap.helloworld" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
     <name>Credential Hub</name>
     <description>
-        Hello World sample application that responds to the deviceready event.
+        Hub for an Agent to Manage their credentials
     </description>
     <author email="joseph_brandenburg@newyorklife.com" href="http://newyorklife.com.com">
-        PhoneGap Team
+        NYL Hackathon Team 30 - Proactive - 5
     </author>
     <content src="index.html" />
     <preference name="DisallowOverscroll" value="true" />
