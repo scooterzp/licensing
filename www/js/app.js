@@ -92,7 +92,7 @@ angular.module('credHub', ['ngMaterial', 'ngMessages', 'ngRoute'])
                     controller: PanelDialogCtrl,
                     controllerAs: 'ctrl',
                     disableParentScroll: false,
-                    templateUrl: 'partials/trainingPanel.html',
+                    templateUrl: 'partials/trainingpanel.html',
                     hasBackdrop: true,
                     panelClass: 'demo-dialog-example',
                     position: position,
