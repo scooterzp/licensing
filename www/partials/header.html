@@ -1,17 +1,19 @@
-<md-toolbar style="background:white;">
-    <div class="md-toolbar-tools" layout-align="top center">
-        <button class="logo-button nyl-blue" aria-label="Home" ng-click="$ctrl.user.loggedIn?$ctrl.user.activePage = 'home':null">
-            <img src="./img/NYL_Logo/V_Video_RGB/NYL_V.png" style="height: 36px; width:36px">
-        </button>
-        <h1 class="nyl-blue">
-            <span class="header-title">CredentialHub&reg;</span>
-        </h1>
-        <span flex></span>
-        <md-button class="md-icon-button " aria-label="Calendar" ng-show='$ctrl.user.loggedIn' ng-click="$ctrl.user.activePage = 'home'">
-            <i class="mdi mdi-calendar mdi-24px nyl-blue"></i>
-        </md-button>
-        <md-button class="md-icon-button " aria-label="Home" ng-show='$ctrl.user.loggedIn' ng-click="$ctrl.user.activePage = 'home'">
-            <i class="mdi mdi-home mdi-24px nyl-blue"></i>
-        </md-button>
-    </div>
-</md-toolbar>
+<div style="min-height: 48px">
+    <md-toolbar style="background:white; position:fixed">
+        <div class="md-toolbar-tools" layout-align="top center">
+            <button class="logo-button nyl-blue" aria-label="Home" ng-click="$ctrl.user.loggedIn?$ctrl.user.activePage = 'home':null">
+                <img src="./img/NYL_Logo/V_Video_RGB/NYL_V.png" style="height: 36px; width:36px">
+            </button>
+            <h1 class="nyl-blue">
+                <span class="header-title">CredentialHub&reg;</span>
+            </h1>
+            <span flex></span>
+            <md-button class="md-icon-button " aria-label="Calendar" ng-show='$ctrl.user.loggedIn' ng-click="$ctrl.user.activePage = 'home'">
+                <i class="mdi mdi-calendar mdi-24px nyl-blue"></i>
+            </md-button>
+            <md-button class="md-icon-button " aria-label="Home" ng-show='$ctrl.user.loggedIn' ng-click="$ctrl.user.activePage = 'home'">
+                <i class="mdi mdi-home mdi-24px nyl-blue"></i>
+            </md-button>
+        </div>
+    </md-toolbar>
+</div>

@@ -126,7 +126,7 @@ h1 {
 .logo-button{
     width:48px;
     height:48px;
-    margin:6px;
+    /*margin:6px;*/
     background: white;
     border: none;
 }
@@ -178,4 +178,8 @@ md-grid-list md-grid-tile md-grid-tile-footer{
     height:30px !important;
     font-size:small;
     text-align: center !important;
+}
+
+.full-minus-header{
+    height:calc(100vh - 48px);
 }

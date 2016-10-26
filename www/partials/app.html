@@ -1,18 +1,18 @@
-<div flex layout="row">
-    <md-content style="height:100vh" flex>
-        <app-header layout="row" user="$ctrl.user"></app-header>
-        <login layout="row" user="$ctrl.user" ng-show='!$ctrl.user.loggedIn && $ctrl.user.activePage == "login"'></login>
-        <home layout="row" user="$ctrl.user" ng-show='$ctrl.user.loggedIn && $ctrl.user.activePage == "home"'></home>
-        <nb-validation layout="row" user="$ctrl.user"  ng-show='$ctrl.user.loggedIn && $ctrl.user.activePage == "nbVal"'></nb-validation>
-        <training layout="row" user="$ctrl.user"  ng-show='$ctrl.user.loggedIn && $ctrl.user.activePage == "train"'></training>
-        <training-done layout="row" user="$ctrl.user"  ng-show='$ctrl.user.loggedIn && $ctrl.user.activePage == "trainCompleted"'></training-done>
-        <gen-info layout="row" user="$ctrl.user"  ng-show='$ctrl.user.loggedIn && $ctrl.user.activePage == "genInfo"'></gen-info>
-        <finra layout="row" user="$ctrl.user"  ng-show='$ctrl.user.loggedIn && $ctrl.user.activePage == "FINRA"'></finra>
 
-        <!--<training-panel layout="row" user="$ctrl.user"  ng-show='$ctrl.user.loggedIn && $ctrl.user.activePage == "trainPanel"'></training-panel>-->
-        <payment layout="row" user="$ctrl.user"  trainingType="Appointments" ng-show='$ctrl.user.loggedIn && $ctrl.user.activePage == "apptPay"'></payment>
-        <payment layout="row" user="$ctrl.user"  trainingType="FINRA Jurisdiction" ng-show='$ctrl.user.loggedIn && $ctrl.user.activePage == "finraPay"'></payment>
 
-    </md-content>
+<app-header layout="row" user="$ctrl.user"></app-header>
+<md-content flex layout="column" class="full-minus-header">
+    <login layout="row" user="$ctrl.user" ng-show='!$ctrl.user.loggedIn && $ctrl.user.activePage == "login"'></login>
+    <home layout="row" user="$ctrl.user" ng-show='$ctrl.user.loggedIn && $ctrl.user.activePage == "home"'></home>
+    <nb-validation layout="row" user="$ctrl.user" ng-show='$ctrl.user.loggedIn && $ctrl.user.activePage == "nbVal"'></nb-validation>
+    <training layout="row" user="$ctrl.user" ng-show='$ctrl.user.loggedIn && $ctrl.user.activePage == "train"'></training>
+    <training-done layout="row" user="$ctrl.user" ng-show='$ctrl.user.loggedIn && $ctrl.user.activePage == "trainCompleted"'></training-done>
+    <gen-info layout="row" user="$ctrl.user" ng-show='$ctrl.user.loggedIn && $ctrl.user.activePage == "genInfo"'></gen-info>
+    <finra layout="row" user="$ctrl.user" ng-show='$ctrl.user.loggedIn && $ctrl.user.activePage == "FINRA"'></finra>
 
-</div>
+    <!--<training-panel layout="row" user="$ctrl.user"  ng-show='$ctrl.user.loggedIn && $ctrl.user.activePage == "trainPanel"'></training-panel>-->
+    <payment layout="row" user="$ctrl.user" trainingType="Appointments" ng-show='$ctrl.user.loggedIn && $ctrl.user.activePage == "apptPay"'></payment>
+    <payment layout="row" user="$ctrl.user" trainingType="FINRA Jurisdiction" ng-show='$ctrl.user.loggedIn && $ctrl.user.activePage == "finraPay"'></payment>
+
+</md-content>
+
