@@ -1,54 +1,17 @@
-<md-toolbar class="md-hue-2">
+<md-toolbar style="background:white;">
     <div class="md-toolbar-tools" layout-align="top center">
-        <md-button class="md-icon-button" aria-label="Settings" ng-show='$ctrl.user.loggedIn'  ng-click="$ctrl.toggleLeft()">
-            <i class="mdi mdi-menu mdi-24px mdi-light"></i>
-        </md-button>
-        <h2>
-            <span>Credential Hub</span>
-        </h2>
+        <button class="logo-button nyl-blue" aria-label="Home" ng-click="$ctrl.user.loggedIn?$ctrl.user.activePage = 'home':null">
+            <img src="./img/NYL_Logo/V_Video_RGB/NYL_V.png" style="height: 36px; width:36px">
+        </button>
+        <h1 class="nyl-blue">
+            <span class="header-title">CredentialHub&reg;</span>
+        </h1>
         <span flex></span>
-        <md-button class="md-icon-button" aria-label="Home" ng-show='$ctrl.user.loggedIn' ng-click="$ctrl.user.activePage = 'home'">
-            <i class="mdi mdi-home mdi-24px mdi-light"></i>
+        <md-button class="md-icon-button " aria-label="Calendar" ng-show='$ctrl.user.loggedIn' ng-click="$ctrl.user.activePage = 'home'">
+            <i class="mdi mdi-calendar mdi-24px nyl-blue"></i>
+        </md-button>
+        <md-button class="md-icon-button " aria-label="Home" ng-show='$ctrl.user.loggedIn' ng-click="$ctrl.user.activePage = 'home'">
+            <i class="mdi mdi-home mdi-24px nyl-blue"></i>
         </md-button>
     </div>
 </md-toolbar>
-<md-sidenav class="md-sidenav-left" md-component-id="left" md-whiteframe="4">
-    <md-toolbar class="md-theme-indigo">
-        <div class="md-toolbar-tools" layout-align="top center">
-            <span flex></span>
-            <md-button ng-click="$ctrl.toggleLeft()" class="md-accent">
-                <i class="mdi mdi-close mdi-24px mdi-light"></i>
-            </md-button>
-        </div>
-    </md-toolbar>
-
-    <md-list layout="column" layout-align="start center">
-        <md-list-item class="listItem" ng-click="$ctrl.user.activePage = 'nbVal'; $ctrl.toggleLeft();">
-            <span>New Business Validation</span>
-            <md-divider></md-divider>
-        </md-list-item>
-        <md-list-item class="listItem" ng-click="$ctrl.user.activePage = 'genInfo'; $ctrl.toggleLeft();">
-            <span>General Info</span>
-            <md-divider></md-divider>
-        </md-list-item>
-        <md-list-item class="listItem" ng-click="$ctrl.user.activePage = 'license'; $ctrl.toggleLeft();">
-            <span>Licensing</span>
-            <md-divider></md-divider>
-        </md-list-item>
-        <md-list-item class="listItem" ng-click="$ctrl.user.activePage = 'FINRA'; $ctrl.toggleLeft();">
-            <span>FINRA</span>
-            <md-divider></md-divider>
-        </md-list-item>
-        <md-list-item class="listItem" ng-click="$ctrl.user.activePage = 'trainCompleted'; $ctrl.toggleLeft();">
-            <span>Training Courses</span>
-            <md-divider></md-divider>
-        </md-list-item>
-        <md-list-item class="listItem" ng-click="$ctrl.user.activePage = 'EAG'; $ctrl.toggleLeft();">
-            <span>Eagle</span>
-            <md-divider></md-divider>
-        </md-list-item>
-        <md-list-item class="listItem" ng-click="$ctrl.user.activePage = 'LTC'; $ctrl.toggleLeft();">
-            <span>Long Term Care</span>
-        </md-list-item>
-    </md-list>
-</md-sidenav>

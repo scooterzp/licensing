@@ -65,6 +65,22 @@ angular.module('credHub', ['ngMaterial', 'ngMessages', 'ngRoute', 'ngCordova'])
         },
         controller: function() {
             var ctrl = this;
+            ctrl.timeOfDay = function(){
+                var dt = new Date();
+                var hours = dt.getHours();
+                var min = dt.getMinutes();
+                var message = "";
+                if(hours>=1 && hours<=12){
+                    message = "Morning";
+                }else if(hours>=12 && min > 0 && hours<=16){
+                    message = "Afternoon";
+                }else if(hours>=16 && min > 0  && hours<=21){
+                    message = "Evening";
+                }else if(hours>=21 && min > 0  && hours<=24){
+                    message = "Night";
+                }
+                return message;
+            }
         }
     }).component('suggestions', {
         templateUrl: "partials/suggestions.html",
@@ -143,7 +159,7 @@ angular.module('credHub', ['ngMaterial', 'ngMessages', 'ngRoute', 'ngCordova'])
                 }else{
                     ctrl.user.activePage = "finraPay";
                 }
-            }
+            };
 
             ctrl.showDialog = function(){
                 var position = $mdPanel.newPanelPosition()

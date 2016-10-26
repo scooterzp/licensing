@@ -36,12 +36,11 @@ body {
         color-stop(0.51, #E4E4E4)
     );
     background-attachment:fixed;
-    font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
+    font-family:'Tahoma';
     font-size:12px;
     height:100%;
     margin:0px;
     padding:0px;
-    text-transform:uppercase;
     width:100%;
 }
 
@@ -120,6 +119,28 @@ h1 {
     width:100%
 }
 
+.nyl-blue{
+    color:#0078c2;
+}
+
+.logo-button{
+    width:48px;
+    height:48px;
+    margin:6px;
+    background: white;
+    border: none;
+}
+
+.header-title{
+    font-weight: bold;
+}
+
+md-grid-tile {
+    transition: all 400ms ease-out 50ms; }
+
+md-grid-list {
+    margin: 8px; }
+
 .demo-dialog-example {
     background: white;
     border-radius: 4px;
@@ -132,4 +153,10 @@ h1 {
 .demo-dialog-content {
     width: 100%;
     text-align: center;
+}
+
+md-grid-list md-grid-tile md-grid-tile-footer{
+    height:30px !important;
+    font-size:small;
+    text-align: center !important;
 }
