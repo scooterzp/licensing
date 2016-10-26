@@ -124,15 +124,17 @@ h1 {
 }
 
 .logo-button{
-    width:48px;
-    height:48px;
-    /*margin:6px;*/
+    width:36px;
+    height:36px;
+    padding-left:6px;
+    padding-right:6px;
     background: white;
     border: none;
 }
 
 .header-title{
     font-weight: bold;
+    margin-left: 12px;
 }
 
 md-grid-tile {
@@ -183,14 +185,4 @@ md-grid-list md-grid-tile md-grid-tile-footer{
 .full-minus-header{
     height:calc(100vh - 48px);
     padding-top: 5px;
-}
-
-.nyl-logo {
-    display: block;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    background: url('../img/NYL_Logo/V_Video_RGB/NYL_V-36px.png') no-repeat;
-    width: 36px; /* Width of new image */
-    height: 36px; /* Height of new image */
-    padding-left: 36px; /* Equal to width of new image */
 }
