@@ -150,6 +150,25 @@ md-grid-list {
     width: 90vw;
 }
 
+.circle {
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    margin: 5px;
+    /* width and height can be anything, as long as they're equal */
+}
+
+.urgent{
+    background: #dc291e
+}
+
+.caution{
+    background: #FFFF00
+}
+
+.analytic{
+    background: #28CD46
+}
 .demo-dialog-content {
     width: 100%;
     text-align: center;
