@@ -12,7 +12,6 @@
     <preference name="android-minSdkVersion" value="14" />
     <plugin name="de.appplant.cordova.plugin.local-notification" />
     <plugin name="cordova-plugin-calendar" />
-    <plugin name="com.paypal.cordova.mobilesdk" source="npm" />
 
     <icon src="icon.png" />
     <platform name="android">
