@@ -1,0 +1,30 @@
+<md-content>
+    <md-toolbar layout="row">
+        <div class="md-toolbar-tools nyl-blue-background">
+            <span>Jurisdictions Registered <i class="mdi mdi-check-circle mdi-24px green-font"></i></span>
+            <span flex></span>
+            <md-button class="md-icon-button" aria-label="Settings">
+                <i class="mdi mdi-plus mdi-24px"></i>
+            </md-button>
+        </div>
+    </md-toolbar>
+    <md-content>
+        <md-list>
+            <md-list-item layout="row">
+                <div flex="25" class="list-header text-center">State</div>
+                <div flex="25" class="list-header text-center">Effective Date</div>
+                <div flex="25" class="list-header text-center">Renewal Date</div>
+                <div flex="25" class="list-header text-center">Expiration Date</div>
+            </md-list-item>
+            <md-divider></md-divider>
+            <div  ng-repeat="juris in $ctrl.jurisdictions">
+                <md-list-item layout="row">
+                    <div flex="25" class="text-center">{{juris.ST_CNTY_CD}} - {{juris.ST_CNTY_CD | stateFilter}}</div>
+                    <div flex="25" class="text-center">{{juris.LICENSE_ISS_DT | date:'MM/dd/yyyy'}}</div>
+                    <div flex="25" class="text-center">{{juris.LICENSE_XDT | date:'MM/dd/yyyy'}}</div>
+                    <div flex="25" class="text-center">{{juris.LICENSE_XDT | date:'MM/dd/yyyy' | noExpiration: juris.LICENSE_XDT}}</div>
+                </md-list-item>
+                <md-divider></md-divider>
+            </div>
+        </md-list>
+    </md-content>

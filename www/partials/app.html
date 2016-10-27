@@ -5,14 +5,14 @@
     <login layout="row" user="$ctrl.user" ng-show='!$ctrl.user.loggedIn && $ctrl.user.activePage == "login"'></login>
     <home layout="row" user="$ctrl.user" ng-show='$ctrl.user.loggedIn && $ctrl.user.activePage == "home"'></home>
     <nb-validation layout="row" user="$ctrl.user" ng-show='$ctrl.user.loggedIn && $ctrl.user.activePage == "nbVal"'></nb-validation>
-    <training layout="row" user="$ctrl.user" ng-show='$ctrl.user.loggedIn && $ctrl.user.activePage == "train"'></training>
+    <training layout="row" user="$ctrl.user" training-type="$ctrl.trainingType" ng-show='$ctrl.user.loggedIn && $ctrl.user.activePage == "train"'></training>
     <training-done layout="row" user="$ctrl.user" ng-show='$ctrl.user.loggedIn && $ctrl.user.activePage == "trainCompleted"'></training-done>
     <gen-info layout="row" user="$ctrl.user" ng-show='$ctrl.user.loggedIn && $ctrl.user.activePage == "genInfo"'></gen-info>
     <finra layout="row" user="$ctrl.user" ng-show='$ctrl.user.loggedIn && $ctrl.user.activePage == "FINRA"'></finra>
+    <eagle layout="row" user="$ctrl.user" ng-show='$ctrl.user.loggedIn && $ctrl.user.activePage == "EAG"'></eagle>
 
     <!--<training-panel layout="row" user="$ctrl.user"  ng-show='$ctrl.user.loggedIn && $ctrl.user.activePage == "trainPanel"'></training-panel>-->
-    <payment layout="row" user="$ctrl.user" trainingType="Appointments" ng-show='$ctrl.user.loggedIn && $ctrl.user.activePage == "apptPay"'></payment>
-    <payment layout="row" user="$ctrl.user" trainingType="FINRA Jurisdiction" ng-show='$ctrl.user.loggedIn && $ctrl.user.activePage == "finraPay"'></payment>
+    <payment layout="row" user="$ctrl.user" training-type="$ctrl.trainingType" ng-show='$ctrl.user.loggedIn && $ctrl.user.activePage == "apptPay"'></payment>
 
 </md-content>
 
