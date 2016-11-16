@@ -100,22 +100,41 @@ angular.module('credHub', ['ngMaterial', 'ngMessages', 'ngRoute', 'ngCordova', '
             user: '=',
             trainingType: '='
         },
-        controller: function() {
+        controller:function() {
             var ctrl = this;
             ctrl.myDate = new Date();
             ctrl.paymentType = "other";
             ctrl.creditCard = "1234 5678 1234";
-            ctrl.submitPayment = function(){
-                ctrl.user.activePage = 'train';
-                var now             = new Date().getTime(),
-                    _10_sec_from_now = new Date(now + 10*1000);
 
-                cordova.plugins.notification.local.schedule({
-                    text: "Payment Successfully Complete",
-                    at: _10_sec_from_now,
-                    led: "FF0000",
-                    sound: null
-                });
+            ctrl.submitPayment = function () {
+               /* return stripe.card.createToken($scope.payment.card)
+                    .then(function (response) {
+                        console.log('token created for card ending in ', response.card.last4);
+                        var payment = angular.copy($scope.payment);
+                        payment.card = void 0;
+                        payment.token = response.id;
+                        return console.log(payment);
+                    })
+                    .then(function (payment) {
+                        console.log('successfully submitted payment for $', payment.amount);
+                        ctrl.user.activePage = 'train';
+                        *//*var now             = new Date().getTime(),
+                            _10_sec_from_now = new Date(now + 10*1000);
+                        cordova.plugins.notification.local.schedule({
+                            text: "Payment Successfully Complete",
+                            at: _10_sec_from_now,
+                            led: "FF0000",
+                            sound: null
+                        });*//*
+                    })
+                    .catch(function (err) {
+                        if (err.type && /^Stripe/.test(err.type)) {
+                            console.log('Stripe error: ', err.message);
+                        }
+                        else {
+                            console.log('Other error occurred, possibly with your API', err.message);
+                        }
+                    });*/
             };
         }
     }).component('finra', {
@@ -280,7 +299,9 @@ angular.module('credHub', ['ngMaterial', 'ngMessages', 'ngRoute', 'ngCordova', '
             user: '=',
             activePage:"="
         }
-    }).
+    })/*.config(function (stripeProvider) {
+        stripeProvider.setPublishableKey('pk_test_rs1KE3nVD09doRhJ2mBtxFqX');
+    })*/.
     config(['$locationProvider', '$routeProvider',
         function config($locationProvider, $routeProvider) {
             $locationProvider.hashPrefix('!');

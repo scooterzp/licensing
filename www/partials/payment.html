@@ -1,35 +1,37 @@
 <md-card class="md-padding" flex>
-    <div>
-        <label>{{$ctrl.trainingType}}</label>
-    </div>
-    <md-content layout="column">
-        <h2>Payment Amount: $15.00</h2>
-
+    <form>
         <div>
-            <md-radio-group ng-model="$ctrl.paymentType">
-                <md-radio-button value="first" class="md-primary">Debit Ledger</md-radio-button>
-                <md-radio-button value="other"> Pay With Credit Card</md-radio-button>
-            </md-radio-group>
+            <label>{{$ctrl.trainingType}}</label>
         </div>
+        <md-content layout="column">
+            <h2>Payment Amount: $15.00</h2>
 
-        <div ng-show="$ctrl.paymentType == 'other'"  layout="column">
-            <div layout="row">
-                <md-input-container>
-                    <label>Credit Card Number</label>
-                    <md-input md-maxlength="16" ng-model="$ctrl.creditCard"></md-input>
-                </md-input-container>
+            <div>
+                <md-radio-group ng-model="$ctrl.paymentType">
+                    <md-radio-button value="first" class="md-primary">Debit Ledger</md-radio-button>
+                    <md-radio-button value="other"> Pay With Credit Card</md-radio-button>
+                </md-radio-group>
             </div>
-            <div  layout="row">
-                <md-input-container>
-                    <label>Expiration Date</label>
-                    <md-datepicker required ng-model="$ctrl.myDate" md-placeholder="Enter date"></md-datepicker>
-                </md-input-container>
+
+            <div ng-show="$ctrl.paymentType == 'other'" layout="column">
+                <div layout="row">
+                    <md-input-container>
+                        <label>Credit Card Number</label>
+                        <md-input md-maxlength="16" ng-model="$ctrl.creditCard"></md-input>
+                    </md-input-container>
+                </div>
+                <div layout="row">
+                    <md-input-container>
+                        <label>Expiration Date</label>
+                        <md-datepicker required ng-model="$ctrl.myDate" md-placeholder="Enter date"></md-datepicker>
+                    </md-input-container>
+                </div>
             </div>
+        </md-content>
+        <div>
+            <div flex></div>
+            <md-button ng-click="$ctrl.submitPayment();">Pay</md-button>
+            <md-button ng-click="$ctrl.user.activePage = 'train';">Cancel</md-button>
         </div>
-    </md-content>
-    <div>
-        <div flex></div>
-        <md-button ng-click="$ctrl.submitPayment();">Pay</md-button>
-        <md-button ng-click="$ctrl.user.activePage = 'train';">Cancel</md-button>
-    </div>
+    </form>
 </md-card>

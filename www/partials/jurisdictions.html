@@ -11,18 +11,16 @@
     <md-content>
         <md-list>
             <md-list-item layout="row">
-                <div flex="25" class="list-header text-center">State</div>
-                <div flex="25" class="list-header text-center">Effective Date</div>
-                <div flex="25" class="list-header text-center">Renewal Date</div>
-                <div flex="25" class="list-header text-center">Expiration Date</div>
+                <div flex="33" class="list-header text-center">State</div>
+                <div flex="33" class="list-header text-center">Effective Date</div>
+                <div flex="33" class="list-header text-center">Expiration Date</div>
             </md-list-item>
             <md-divider></md-divider>
             <div  ng-repeat="juris in $ctrl.jurisdictions">
-                <md-list-item layout="row">
-                    <div flex="25" class="text-center">{{juris.ST_CNTY_CD}} - {{juris.ST_CNTY_CD | stateFilter}}</div>
-                    <div flex="25" class="text-center">{{juris.LICENSE_ISS_DT | date:'MM/dd/yyyy'}}</div>
-                    <div flex="25" class="text-center">{{juris.LICENSE_XDT | date:'MM/dd/yyyy'}}</div>
-                    <div flex="25" class="text-center">{{juris.LICENSE_XDT | date:'MM/dd/yyyy' | noExpiration: juris.LICENSE_XDT}}</div>
+                <md-list-item layout="row" ng-hide="isExpired(item)">
+                    <div flex="33" class="text-center">{{juris.ST_CNTY_CD}} - {{juris.ST_CNTY_CD | stateFilter}}</div>
+                    <div flex="33" class="text-center">{{juris.LICENSE_ISS_DT | date:'MM/dd/yyyy'}}</div>
+                    <div flex="33" class="text-center">{{juris.LICENSE_XDT | date:'MM/dd/yyyy' | noExpiration: juris.LICENSE_XDT}}</div>
                 </md-list-item>
                 <md-divider></md-divider>
             </div>
