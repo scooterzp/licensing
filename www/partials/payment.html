@@ -13,15 +13,13 @@
                 </md-radio-group>
             </div>
 
-            <div ng-show="$ctrl.paymentType == 'other'" layout="column">
+            <div ng-show="$ctrl.paymentType == 'other'" layout="column" style="font-size: small">
                 <div layout="row">
-                    <md-input-container>
+                    <md-input-container flex="50">
                         <label>Credit Card Number</label>
-                        <md-input md-maxlength="16" ng-model="$ctrl.creditCard"></md-input>
+                        <input md-maxlength="16" ng-model="$ctrl.creditCard"></input>
                     </md-input-container>
-                </div>
-                <div layout="row">
-                    <md-input-container>
+                    <md-input-container flex="50">
                         <label>Expiration Date</label>
                         <md-datepicker required ng-model="$ctrl.myDate" md-placeholder="Enter date"></md-datepicker>
                     </md-input-container>
@@ -30,8 +28,8 @@
         </md-content>
         <div>
             <div flex></div>
-            <md-button ng-click="$ctrl.submitPayment();">Pay</md-button>
-            <md-button ng-click="$ctrl.user.activePage = 'train';">Cancel</md-button>
+            <md-button class="md-raised" ng-click="$ctrl.submitPayment();">Pay</md-button>
+            <md-button class="md-raised" ng-click="$ctrl.user.activePage = 'train';">Cancel</md-button>
         </div>
     </form>
 </md-card>

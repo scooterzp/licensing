@@ -4,17 +4,18 @@ angular.module('credHub', ['ngMaterial', 'ngMessages', 'ngRoute', 'ngCordova', '
         controller:['$resource', function ($resource) {
             var ctrl = this;
             ctrl.user = {
-                title: 'Developer',
+                title: 'Agent',
                 email: 'ipsum@lorem.com',
-                firstName: 'Joseph',
-                lastName: 'Brandenburg',
+                firstName: 'John Q',
+                lastName: 'Nylic',
+                fullName: 'Nylic, John Q',
                 company: 'New York Life',
-                address: '30 Hudson Street',
-                city: 'Jersey City',
-                state: 'NJ',
+                businessAddress: '145 ROBERT E LEE BLVD, SUITE 310, EDISON, NJ 08820',
+                residenceAddress: '123 Fake Street, Nyack, NY 10960',
                 biography: 'Loves kittens, snowboarding, and can type at 130 WPM.\n\nAnd rumor has it she bouldered up Castle Craig!',
-                postalCode: '94043',
-                userId: '',
+                businessPhone:'(732) 432-1645',
+                residencePhone:'(914) 342-0786',
+                producerId: '1234567',
                 password: '',
                 loggedIn: false,
                 activePage: "login"
@@ -48,6 +49,8 @@ angular.module('credHub', ['ngMaterial', 'ngMessages', 'ngRoute', 'ngCordova', '
         },
         controller: function(){
             var ctrl = this;
+            ctrl.readonly = true;
+            ctrl.isEdit = false;
 
         }
     }).component('login', {
@@ -185,7 +188,7 @@ angular.module('credHub', ['ngMaterial', 'ngMessages', 'ngRoute', 'ngCordova', '
                     ctrl.user.activePage = "apptPay";
                     ctrl.trainingType = "Appointments";
                 }else{
-                    ctrl.user.activePage = "finraPay";
+                    ctrl.user.activePage = "apptPay";
                     ctrl.trainingType = "FINRA Jurisdiction";
                 }
             };
@@ -225,6 +228,15 @@ angular.module('credHub', ['ngMaterial', 'ngMessages', 'ngRoute', 'ngCordova', '
         controller:  function() {
             var ctrl = this;
 
+
+        }
+    }).component('license', {
+        templateUrl: "partials/licenses.html",
+        bindings: {
+            user: '='
+        },
+        controller:  function() {
+            var ctrl = this;
 
         }
     }).component('jurisdiction', {

@@ -10,9 +10,11 @@
     <gen-info layout="row" user="$ctrl.user" ng-show='$ctrl.user.loggedIn && $ctrl.user.activePage == "genInfo"'></gen-info>
     <finra flex layout="row" user="$ctrl.user" ng-show='$ctrl.user.loggedIn && $ctrl.user.activePage == "FINRA"'></finra>
     <eagle layout="row" user="$ctrl.user" ng-show='$ctrl.user.loggedIn && $ctrl.user.activePage == "EAG"'></eagle>
+    <license flex layout="row" user="$ctrl.user" ng-show='$ctrl.user.loggedIn && $ctrl.user.activePage == "license"'></license>
 
     <!--<training-panel layout="row" user="$ctrl.user"  ng-show='$ctrl.user.loggedIn && $ctrl.user.activePage == "trainPanel"'></training-panel>-->
     <payment layout="row" user="$ctrl.user" training-type="$ctrl.trainingType" ng-show='$ctrl.user.loggedIn && $ctrl.user.activePage == "apptPay"'></payment>
+
 
 </md-content>
 

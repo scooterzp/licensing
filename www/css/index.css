@@ -123,7 +123,7 @@ h1 {
     color:#0078c2;
 }
 .nyl-blue-background{
-    background:#0078c2;
+    background:#0078c2 !important;
 }
 
 .white-background{

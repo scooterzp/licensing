@@ -1,0 +1,95 @@
+<md-content layout-fill layout="column" class="md-padding">
+    <div class="page-title">Licenses and Appointments</div>
+    <md-tabs flex class="md-primary" layout="column" md-selected="data.selectedIndex" md-align-tabs="bottom">
+        <md-tab id="tab1">
+            <md-tab-label>Licenses</md-tab-label>
+            <md-tab-body flex>
+                <md-toolbar layout="row">
+                    <div class="md-toolbar-tools nyl-blue-background">
+                    <span>Licenses
+                        <i class="mdi mdi-check-circle mdi-24px green-font"></i>
+                    </span>
+                        <span flex></span>
+                        <md-button class="md-icon-button" aria-label="Settings">
+                            <i class="mdi mdi-plus mdi-24px"></i>
+                        </md-button>
+                    </div>
+                </md-toolbar>
+                <md-list flex>
+                    <md-list-item layout="row">
+                        <div flex="50" class="list-header text-center">Exam</div>
+                        <div flex="50" class="list-header text-center">Approval Date</div>
+                    </md-list-item>
+                    <md-divider></md-divider>
+                    <div ng-repeat="exam in $ctrl.exams">
+                        <md-list-item layout="row">
+                            <div flex="50" class="text-center">{{exam.NASD_SRS_NO | seriesFilter:exam.NASD_SRS_NO }}</div>
+                            <div flex="50" class="text-center">{{exam.NASD_SRS_APRV_DT | date:'MM/dd/yyyy'}}</div>
+                        </md-list-item>
+                        <md-divider></md-divider>
+                    </div>
+                </md-list>
+            </md-tab-body>
+        </md-tab>
+        <md-tab id="tab2">
+            <md-tab-label>Appointments</md-tab-label>
+            <md-tab-body flex>
+                <md-toolbar layout="row">
+                    <div class="md-toolbar-tools nyl-blue-background">
+                        <span>Appointments <i class="mdi mdi-check-circle mdi-24px green-font"></i></span>
+                        <span flex></span>
+                        <md-button class="md-icon-button" aria-label="Settings">
+                            <i class="mdi mdi-plus mdi-24px"></i>
+                        </md-button>
+                    </div>
+                </md-toolbar>
+                <md-list>
+                    <md-list-item layout="row">
+                        <div flex="33" class="list-header text-center">State</div>
+                        <div flex="33" class="list-header text-center">Effective Date</div>
+                        <div flex="33" class="list-header text-center">Expiration Date</div>
+                    </md-list-item>
+                    <md-divider></md-divider>
+                    <div ng-repeat="appointment in $ctrl.appointments">
+                        <md-list-item layout="row">
+                            <div flex="33" class="text-center">{{appointment.ST_CD}} - {{affiliation.ST_CD | stateFilter}}</div>
+                            <div flex="33" class="text-center">{{appointment.ST_REQ_LIC_ISS_DT | date:'MM/dd/yyyy'}}</div>
+                            <div flex="33" class="text-center">{{appointment.ST_REQ_LIC_XDT | date:'MM/dd/yyyy' | noExpiration: affiliation.ST_REQ_LIC_XDT}}</div>
+                        </md-list-item>
+                        <md-divider></md-divider>
+                    </div>
+                </md-list>
+            </md-tab-body>
+        </md-tab>
+        <md-tab id="tab3">
+            <md-tab-label>Continuing Ed</md-tab-label>
+            <md-tab-body flex>
+                <md-toolbar layout="row">
+                    <div class="md-toolbar-tools nyl-blue-background">
+                        <span>Continuing Education <i class="mdi mdi-check-circle mdi-24px green-font"></i></span>
+                        <span flex></span>
+                        <md-button class="md-icon-button" aria-label="Settings">
+                            <i class="mdi mdi-plus mdi-24px"></i>
+                        </md-button>
+                    </div>
+                </md-toolbar>
+                <md-list>
+                    <md-list-item layout="row">
+                        <div flex="33" class="list-header text-center">State</div>
+                        <div flex="33" class="list-header text-center">Effective Date</div>
+                        <div flex="33" class="list-header text-center">Expiration Date</div>
+                    </md-list-item>
+                    <md-divider></md-divider>
+                    <div ng-repeat="education in $ctrl.educations">
+                        <md-list-item layout="row">
+                            <div flex="33" class="text-center">{{education.ST_CD}} - {{affiliation.ST_CD | stateFilter}}</div>
+                            <div flex="33" class="text-center">{{education.ST_REQ_LIC_ISS_DT | date:'MM/dd/yyyy'}}</div>
+                            <div flex="33" class="text-center">{{education.ST_REQ_LIC_XDT | date:'MM/dd/yyyy' | noExpiration: affiliation.ST_REQ_LIC_XDT}}</div>
+                        </md-list-item>
+                        <md-divider></md-divider>
+                    </div>
+                </md-list>
+            </md-tab-body>
+        </md-tab>
+    </md-tabs>
+</md-content>

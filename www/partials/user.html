@@ -1,15 +1,15 @@
 <md-card flex>
-    <div>
-        <h4>Name: Nylic, John Q</h4>
-        <h4>Producer Id: 1234567</h4>
-        <h4>Business Address: 145 ROBERT E LEE BLVD, SUITE 310, EDISON, NJ 08820</h4>
-        <h4>Business Phone: (732)432-1645</h4>
-        <h4>Residence Address: 235 IDNCIJ H ANW KAGN, JVFJN 522, NYACK, NY 10960</h4>
-        <h4>Business Phone: (914)342-0786</h4>
-    </div>
-    <div>
-        <h4>Do you want to make changes to the general information?</h4>
+    <md-content class="md-padding">
+        <md-input-container layout="row"><label>Name</label> <input ng-model="$ctrl.user.fullName" ng-readonly="$ctrl.readonly"></md-input-container>
+        <md-input-container layout="row"><label>Producer Id</label><input ng-model="$ctrl.user.producerId" ng-readonly="$ctrl.readonly"></label></md-input-container>
+        <md-input-container layout="row"><label>Business Address</label><input ng-model="$ctrl.user.businessAddress" ng-readonly="$ctrl.readonly"></md-input-container>
+        <md-input-container layout="row"><label>Business Phone</label><input ng-model="$ctrl.user.businessPhone" ng-readonly="$ctrl.readonly"></md-input-container>
+        <md-input-container layout="row"><label>Residence Address</label><input ng-model="$ctrl.user.residenceAddress" ng-readonly="$ctrl.readonly"></md-input-container>
+        <md-input-container layout="row"><label>Residence Phone</label><input ng-model="$ctrl.user.residencePhone" ng-readonly="$ctrl.readonly"></md-input-container>
+    </md-content>
+    <div layout="row">
         <span flex></span>
-        <md-button name="infoChange" type="button" value="Yes" >Yes</md-button>
+        <md-button name="infoChange" type="button" class="md-raised"  ng-click="$ctrl.isEdit = true;$ctrl.readonly=false;" ng-show="!$ctrl.isEdit">Edit</md-button>
+        <md-button name="infoSave" type="button" class="md-raised" ng-click="$ctrl.isEdit = false;$ctrl.readonly=true;" ng-show="$ctrl.isEdit">Save</md-button>
     </div>
 </md-card>

@@ -77,8 +77,9 @@
         </md-select>
     </md-input-container>
     <md-divider></md-divider>
-    <md-input-group layout="row" ng-show="$ctrl.delivery != ''" layout-align="start center">
-        <md-button ng-click="$ctrl.user.activePage = 'train'; $ctrl.clear();">Check</md-button>
-        <md-button ng-click="$ctrl.user.activePage = 'home'; $ctrl.clear();">Cancel</md-button>
-    </md-input-group>
+
+    <md-card-actions layout="row" layout-align="end center"  ng-show="$ctrl.delivery != ''">
+        <md-button class="md-raised" ng-click="$ctrl.user.activePage = 'train'; $ctrl.clear();">Check</md-button>
+        <md-button class="md-raised" ng-click="$ctrl.user.activePage = 'home'; $ctrl.clear();">Cancel</md-button>
+    </md-card-actions>
 </md-card>
