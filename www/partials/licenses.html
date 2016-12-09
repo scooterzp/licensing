@@ -1,4 +1,4 @@
-<md-content layout-fill layout="column" class="md-padding">
+<md-content layout-fill layout="column" class="md-padding" style="font-size:x-small !important">
     <div class="page-title">Licenses and Appointments</div>
     <md-tabs flex class="md-primary" layout="column" md-selected="data.selectedIndex" md-align-tabs="bottom">
         <md-tab id="tab1">
@@ -15,7 +15,7 @@
                 </md-toolbar>
                 <md-list>
                     <md-list-item layout="row">
-                        <div flex="10"  class="list-header text-center">State</div>
+                        <div flex="10" class="list-header text-center">State</div>
                         <div flex="15" class="list-header text-center">Last Update Date</div>
                         <div flex="15" class="list-header text-center">Compliance Status</div>
                         <div flex="15" class="list-header text-center">Category</div>
@@ -27,12 +27,39 @@
                     <div ng-repeat="ed in $ctrl.education">
                         <md-list-item layout="row">
                             <div flex="10" class="text-center">{{ed.state | stateFilter}}</div>
-                            <div flex="15" class="text-center">{{ed.lastUpdate | date:'MM/dd/yyyy'}}</div>
+                            <div flex="15" class="text-center">{{ed.lastUpdate | date:'MM/dd/YY'}}</div>
                             <div flex="15" class="text-center">{{ed.status}}</div>
                             <div flex="15" class="text-center">{{ed.category}}</div>
                             <div flex="15" class="text-center">{{ed.reqHrs}}</div>
                             <div flex="15" class="text-center">{{ed.comHrs}}</div>
-                            <div flex="15" class="text-center">{{ed.reqHrs - ed.comHrs }}</div>
+                            <div flex="15" class="text-center">{{ed.outHrs}}</div>
+                        </md-list-item>
+                        <md-divider></md-divider>
+                    </div>
+                    <md-subheader class="md-no-sticky">Completed Courses</md-subheader>
+                    <md-list-item layout="row">
+                        <div flex="10" class="list-header text-center">Date Taken</div>
+                        <div flex="10" class="list-header text-center">Course Group</div>
+                        <div flex="10" class="list-header text-center">Course ID</div>
+                        <div flex="15" class="list-header text-center">Course Name</div>
+                        <div flex="10" class="list-header text-center">Provider ID</div>
+                        <div flex="15" class="list-header text-center">Provider Name</div>
+                        <div flex="10" class="list-header text-center">Total Credits</div>
+                        <div flex="10" class="list-header text-center">Ethic Credits</div>
+                        <div flex="10" class="list-header text-center">Date Banked</div>
+                    </md-list-item>
+                    <md-divider></md-divider>
+                    <div ng-repeat="ed in $ctrl.completedEd">
+                        <md-list-item layout="row">
+                            <div flex="10" class="text-center">{{ed.dateTaken | date:'MM/dd/YY'}}</div>
+                            <div flex="10" class="text-center">{{ed.courseGrp}}</div>
+                            <div flex="10" class="text-center">{{ed.courseId}}</div>
+                            <div flex="15" class="text-center">{{ed.courseName | capitalize}}</div>
+                            <div flex="10" class="text-center">{{ed.providerId}}</div>
+                            <div flex="15" class="text-center">{{ed.providerName}}</div>
+                            <div flex="10" class="text-center">{{ed.totalCredits}}</div>
+                            <div flex="10" class="text-center">{{ed.ethicCredits}}</div>
+                            <div flex="10" class="text-center">{{ed.dateBanked | date:'MM/dd/YY'}}</div>
                         </md-list-item>
                         <md-divider></md-divider>
                     </div>

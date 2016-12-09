@@ -236,3 +236,6 @@ md-grid-tile-footer{
     color:black !important;
 }
 
+.capitalize {
+    text-transform: capitalize;
+}
