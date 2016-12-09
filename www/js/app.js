@@ -237,6 +237,20 @@ angular.module('credHub', ['ngMaterial', 'ngMessages', 'ngRoute', 'ngCordova', '
         },
         controller:  function() {
             var ctrl = this;
+            ctrl.education = [{
+               state:'AL',
+                status:'Not Met',
+                lastUpdate: '3/1/2016',
+                category:'Ethic',
+                reqHrs: 3,
+                comHrs: 0
+            },{ state:'AL',
+                status:'Not Met',
+                lastUpdate: '3/1/2016',
+                category:'Total',
+                reqHrs: 24,
+                comHrs: 10
+        }]
 
         }
     }).component('jurisdiction', {

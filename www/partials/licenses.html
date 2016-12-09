@@ -2,6 +2,44 @@
     <div class="page-title">Licenses and Appointments</div>
     <md-tabs flex class="md-primary" layout="column" md-selected="data.selectedIndex" md-align-tabs="bottom">
         <md-tab id="tab1">
+            <md-tab-label>Continuing Ed</md-tab-label>
+            <md-tab-body flex>
+                <md-toolbar layout="row">
+                    <div class="md-toolbar-tools nyl-blue-background">
+                        <span>Continuing Education <i class="mdi mdi-check-circle mdi-24px green-font"></i></span>
+                        <span flex></span>
+                        <md-button class="md-icon-button" aria-label="Settings">
+                            <i class="mdi mdi-plus mdi-24px"></i>
+                        </md-button>
+                    </div>
+                </md-toolbar>
+                <md-list>
+                    <md-list-item layout="row">
+                        <div flex="10"  class="list-header text-center">State</div>
+                        <div flex="15" class="list-header text-center">Last Update Date</div>
+                        <div flex="15" class="list-header text-center">Compliance Status</div>
+                        <div flex="15" class="list-header text-center">Category</div>
+                        <div flex="15" class="list-header text-center">Required Hours</div>
+                        <div flex="15" class="list-header text-center">Completed Hours</div>
+                        <div flex="15" class="list-header text-center">Outstanding Hours</div>
+                    </md-list-item>
+                    <md-divider></md-divider>
+                    <div ng-repeat="ed in $ctrl.education">
+                        <md-list-item layout="row">
+                            <div flex="10" class="text-center">{{ed.state | stateFilter}}</div>
+                            <div flex="15" class="text-center">{{ed.lastUpdate | date:'MM/dd/yyyy'}}</div>
+                            <div flex="15" class="text-center">{{ed.status}}</div>
+                            <div flex="15" class="text-center">{{ed.category}}</div>
+                            <div flex="15" class="text-center">{{ed.reqHrs}}</div>
+                            <div flex="15" class="text-center">{{ed.comHrs}}</div>
+                            <div flex="15" class="text-center">{{ed.reqHrs - ed.comHrs }}</div>
+                        </md-list-item>
+                        <md-divider></md-divider>
+                    </div>
+                </md-list>
+            </md-tab-body>
+        </md-tab>
+        <md-tab id="tab2">
             <md-tab-label>Licenses</md-tab-label>
             <md-tab-body flex>
                 <md-toolbar layout="row">
@@ -31,7 +69,7 @@
                 </md-list>
             </md-tab-body>
         </md-tab>
-        <md-tab id="tab2">
+        <md-tab id="tab3">
             <md-tab-label>Appointments</md-tab-label>
             <md-tab-body flex>
                 <md-toolbar layout="row">
@@ -61,35 +99,6 @@
                 </md-list>
             </md-tab-body>
         </md-tab>
-        <md-tab id="tab3">
-            <md-tab-label>Continuing Ed</md-tab-label>
-            <md-tab-body flex>
-                <md-toolbar layout="row">
-                    <div class="md-toolbar-tools nyl-blue-background">
-                        <span>Continuing Education <i class="mdi mdi-check-circle mdi-24px green-font"></i></span>
-                        <span flex></span>
-                        <md-button class="md-icon-button" aria-label="Settings">
-                            <i class="mdi mdi-plus mdi-24px"></i>
-                        </md-button>
-                    </div>
-                </md-toolbar>
-                <md-list>
-                    <md-list-item layout="row">
-                        <div flex="33" class="list-header text-center">State</div>
-                        <div flex="33" class="list-header text-center">Effective Date</div>
-                        <div flex="33" class="list-header text-center">Expiration Date</div>
-                    </md-list-item>
-                    <md-divider></md-divider>
-                    <div ng-repeat="education in $ctrl.educations">
-                        <md-list-item layout="row">
-                            <div flex="33" class="text-center">{{education.ST_CD}} - {{affiliation.ST_CD | stateFilter}}</div>
-                            <div flex="33" class="text-center">{{education.ST_REQ_LIC_ISS_DT | date:'MM/dd/yyyy'}}</div>
-                            <div flex="33" class="text-center">{{education.ST_REQ_LIC_XDT | date:'MM/dd/yyyy' | noExpiration: affiliation.ST_REQ_LIC_XDT}}</div>
-                        </md-list-item>
-                        <md-divider></md-divider>
-                    </div>
-                </md-list>
-            </md-tab-body>
-        </md-tab>
+
     </md-tabs>
 </md-content>
